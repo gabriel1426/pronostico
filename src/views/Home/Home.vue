@@ -24,11 +24,11 @@
     <b-nav vertical class="w-100 p-0">
   <ul class="list-group pl-3">
   
-  <li class="list-group-item  p-3"><i class="fas fa-home"></i>&nbsp;&nbsp; Predicciones</li>
-  <li class="list-group-item  p-3"><i class="fas fa-futbol"></i> &nbsp;&nbsp;Futball</li>
-  <li class="list-group-item  p-3"><i class="fas fa-chess"></i>&nbsp;&nbsp;Ajedrez</li>
-  <li class="list-group-item  p-3"><i class="fas fa-basketball-ball"></i>&nbsp;&nbsp; Basketball</li>
-  <li class="list-group-item  p-3"><i class="fas fa-paw"></i>&nbsp;&nbsp;Carrera de galgos</li>
+  <li class="list-group-item  p-3 lista"><i class="fas fa-home"></i>&nbsp;&nbsp; Predicciones</li>
+  <li class="list-group-item  p-3 lista"><i class="fas fa-futbol"></i> &nbsp;&nbsp;Futball</li>
+  <li class="list-group-item  p-3 lista"><i class="fas fa-chess"></i>&nbsp;&nbsp;Ajedrez</li>
+  <li class="list-group-item  p-3 lista"><i class="fas fa-basketball-ball"></i>&nbsp;&nbsp; Basketball</li>
+  <li class="list-group-item  p-3 lista"><i class="fas fa-paw"></i>&nbsp;&nbsp;Carrera de galgos</li>
 </ul>
 </b-nav>
 
@@ -72,73 +72,53 @@
         <div class="row flex-xl-nowrap m-2">
 
         <div class="col-12  col-md-9 col-xl-8 container p-2  ">
-<div class="card text-center m-2">
-  <div class="card-header ">
-    Featured
-  </div>
-  <div class="card-body ">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    
+  
+<div>
+    <b-card no-body
+            style="max-width: 100%;"
+      
+            
+            img-top>
+        
+        <h6 slot="header" style="text-align:right"> bookmakers  <b-btn v-b-toggle.collapse1 variant="primary">Comentarios</b-btn> &nbsp;&nbsp; <a href="#">Seguir</a></h6>
+        <b-card-body align-self="center" class="p-0" style="text-align: center">
 
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
-<div class="card text-center m-2">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
-<div class="card text-center m-2">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
-<div class="card text-center m-2">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
-<div class="card text-center m-2">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
+            <b-row >
+              <b-col  cols="4">
+                <b-img rounded="circle"  width="75" height="75" src="https://sistemas.com/termino/wp-content/uploads/Usuario-Icono.jpg" alt="img" class="m-0 p-0" /> <h5>Gabriel Contreras</h5>
+              </b-col>
+              <b-col class="vl" cols="8">
+                 <h6 <b-img rounded="circle"  width="70" height="70" src="https://winphonemetro.com/wp-content/blogs.dir/26/files/2013/08/Liga-de-F%C3%BAtbol-Profesional.jpg" alt="img" class="m-2 p-2" />
+                  España - España Cup Racing Santander - Real Betis</h6>
+                  <h3>&nbsp;&nbsp; 3 &nbsp;- &nbsp; 2&nbsp;&nbsp; </h3>
+              </b-col>
+            </b-row>
+      <hr class="m-1">
+          <div class="p-0" style="text-align: left">
+        
+          <b-collapse id="collapse1" class="mt-2">
+            <b-card>
+              <b-btn v-b-toggle.collapse1_inner size="sm">Comentar</b-btn>
+              <b-collapse id=collapse1_inner class="mt-2">
+                <b-form-input v-model="text1"
+                          type="text"
+                          placeholder="Escribe tu comentario"></b-form-input>
+                
+              </b-collapse>
+              <br>
+              <b-card>Comentarios</b-card>
+              <br>
+              
+            </b-card>
+          </b-collapse>
+        </div>
+                </b-card-body>
+               
+                <b-card-footer style="text-align:right">1 de noviembre del 2018</b-card-footer>
+                
+            </b-card>
+        </div>
+
         </div>
         <div class="col-12  col-md-9 col-xl-4 ">
 
@@ -195,11 +175,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d43', end
 .btn.fin{
     margin-right:60px;
 }
+.vl {
+    border-left: 1px solid #2a2a2e;
+    height: 100%;
+}
 .btn-outline-secondary{
   color: white;
 }
 li:hover{
   background-color: slategray;
+}
+
+.lista{
+  background-color: #2a2a2e;
+  color:white;
 }
 
 .dimensiones{
@@ -221,12 +210,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 
 .bg-light{
   background: #2a2a2e;
-    background-color: transparent!important;
+  background-color: transparent!important;
 }
-.list-group-item{
-  background-color: #2a2a2e;
-  color:white;
-}
+
 
 </style>
 
