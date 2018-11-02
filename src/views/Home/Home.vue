@@ -3,7 +3,7 @@
   <section  class="todo">
   <nav class="navbar colornav p-0" >
   <a class="navbar-brand">
-      <img src='../../assets/logo.png' alt=""> 
+    <img src='../../assets/logo.png' alt=""> 
   </a>
   <ul class="nav pull-xs-right ">
   <li class="nav-item text-muted p-0">
@@ -35,7 +35,6 @@
     <b-navbar vertical class="w-100 p-0" toggleable="md">
     <b-navbar-toggle   target="nav_collapse"></b-navbar-toggle>
      <b-collapse class="" is-nav id="nav_collapse">
-       
       <b-list-group class="w-100  p-0">
         <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-home"></i>&nbsp;&nbsp; Predicciones</b-list-group-item>
         <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-futbol"></i> &nbsp;&nbsp;football</b-list-group-item>
@@ -48,9 +47,7 @@
    </b-navbar>
 
   </div>
-            
   <main class="col-12  col-md-9 col-xl-10 p-0  fond1">
-        
     <template>
   <div  class="mh-100"  style="max-height:200px;">
     <b-carousel id="carousel1"
@@ -285,31 +282,31 @@ background: linear-gradient(to bottom, rgba(61,61,67,1) 0%, rgba(61,61,67,1) 38%
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d43', endColorstr='#595964', GradientType=0 );
 }
 .fondocolor{
-  background-color:#2a2a2e;
+  background-color:#2a2a2e !important;
 }
 .fondocolorDerecha{
-  background-color:transparent;
+  background-color:transparent !important;
 
 }
 .btn{
     margin: 10px;
 }
 button.listas:hover{
-   background-color: slategray;
+   background-color: slategray !important;
 }
 .btn.fin{
-    margin-right:60px;
+    margin-right:60px !important;
 }
 .btn-outline-secondary{
-  color: white;
+  color: white !important;
 }
 
 .modal-footer{
   padding: 0%;
 }
 .lista{
-  background-color: #2a2a2e;
-  color:white;
+  background-color: #2a2a2e !important;
+  color:white !important;
 }
 
 
@@ -330,27 +327,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 }
 
 .seccionDerecha{
-  background-color: #ff7f50;
-  margin-top: 20px;
-  color:white;
+  background-color: #ff7f50 !important;
+  margin-top: 20px !important;
+  color:white !important;
 }
 .seccionDerecha1{
-  background-color: #bfece9;
-  display: inline-block;
-  color:blue;
-  font-weight: bold;
+  background-color: #bfece9 !important;
+  display: inline-block !important;
+  color:blue !important;
+  font-weight: bold!important;
 }
 
 .card-header{
-  background-color:#133337;
-  color:white;
+  background-color:#133337 !important;
+  color:white !important;
 }
 .card-footer{
-  background-color:#133337;
-  color:white;
+  background-color:#133337 !important;
+  color:white !important;
 }
 .card-body{
-  background-color: #f5f5dc;
+  background-color: #f5f5dc !important;
   
 }
 
