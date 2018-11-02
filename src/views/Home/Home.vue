@@ -7,10 +7,21 @@
   </a>
   <ul class="nav pull-xs-right ">
   <li class="nav-item text-muted p-0">
-  <button type="button" class="btn btn-outline-secondary">Iniciar Sesion</button>
+    <b-btn v-b-modal.modallogin>Iniciar Sesion</b-btn>
+    <b-modal  id="modallogin" title="Ingreso">
+    <p class="my-4">Hello from modal!</p>
+    <div class="pad" slot="modal-footer" >
+         <b-btn size="sm" class="float-right" variant="primary" @click="show=false">
+           Enviar
+         </b-btn>
+       </div>
+  </b-modal>
   </li>
   <li class="nav-item text-muted">
-  <button type="button" class="btn btn-outline-secondary">Registro</button>
+   <b-btn v-b-modal.modalregistro>Iniciar Sesion</b-btn>
+   <b-modal id="modalregistro" title="Registro">
+    <p class="my-4">Hello from modal!</p>
+  </b-modal>
   </li>
   </ul>
   </nav>
@@ -25,14 +36,14 @@
     <b-navbar-toggle   target="nav_collapse"></b-navbar-toggle>
      <b-collapse class="" is-nav id="nav_collapse">
        
-      <ul class="list-group w-100  p-0">
-  
-        <li class="list-group-item lista p-3"><i class="fas fa-home"></i>&nbsp;&nbsp; Predicciones</li>
-        <li class="list-group-item lista p-3"><i class="fas fa-futbol"></i> &nbsp;&nbsp;football</li>
-        <li class="list-group-item lista p-3"><i class="fas fa-chess"></i>&nbsp;&nbsp;Ajedrez</li>
-        <li class="list-group-item lista p-3"><i class="fas fa-basketball-ball"></i>&nbsp;&nbsp; Basketball</li>
-       <li class="list-group-item lista p-3"><i class="fas fa-paw"></i>&nbsp;&nbsp;Carrera de galgos</li>
-    </ul>
+      <b-list-group class="w-100  p-0">
+        <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-home"></i>&nbsp;&nbsp; Predicciones</b-list-group-item>
+        <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-futbol"></i> &nbsp;&nbsp;football</b-list-group-item>
+        <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-chess"></i>&nbsp;&nbsp;Ajedrez</b-list-group-item>
+        <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-basketball-ball"></i>&nbsp;&nbsp; Basketball</b-list-group-item>
+        <b-list-group-item href="#" button class="lista p-3 listas"><i class="fas fa-paw"></i>&nbsp;&nbsp;Carrera de galgos</b-list-group-item>
+      </b-list-group>
+
     </b-collapse>
    </b-navbar>
 
@@ -168,19 +179,19 @@
 
     <div class="col-12 col-md-3 col-xl-3 bd-sidebar fondocolor fondocolorDerecha  p-0">
 
-    <b-nav vertical class="w-100 p-0">
-      <ul class="list-group  pl-3">
-  
-        <li class="list-group-item seccionDerecha  p-3"><i class="fas fa-home"></i>&nbsp;&nbsp; Top Bookmakers</li>
-        <li class="list-group-item seccionDerecha1  p-3"> Coolbet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-         <li class="list-group-item seccionDerecha1  p-3"> Bet365t&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-          <li class="list-group-item seccionDerecha1  p-3"> PinnAclet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-           <li class="list-group-item seccionDerecha1  p-3"> Sbobet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-            <li class="list-group-item seccionDerecha1  p-3"> Coolbet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-             <li class="list-group-item seccionDerecha1  p-3"> Betfair&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </li>
-        
-    </ul>
-   </b-nav>
+        <b-list-group class="w-100  p-0">
+
+        <b-list-group-item class="seccionDerecha p-3"><i class="fas fa-home"></i>&nbsp;&nbsp; Top Bookmakers</b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas"> Coolbet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Bet365t&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas"> PinnAclet&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Sbobet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Coolbet&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> <i class="far fa-star"></i></b-list-group-item>
+        <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Betfair&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </b-list-group-item>
+
+        </b-list-group>
+
+    
 
   </div>
 
@@ -283,14 +294,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d43', end
 .btn{
     margin: 10px;
 }
+button.listas:hover{
+   background-color: slategray;
+}
 .btn.fin{
     margin-right:60px;
 }
 .btn-outline-secondary{
   color: white;
 }
-li:hover{
-  background-color: slategray;
+
+.modal-footer{
+  padding: 0%;
 }
 .lista{
   background-color: #2a2a2e;
