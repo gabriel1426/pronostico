@@ -2,26 +2,87 @@
 <DefaultLayout>
   <section  class="todo">
   <nav class="navbar colornav p-0" >
-  <a class="navbar-brand">
-    <img src='../../assets/logo.png' alt=""> 
+  <a class="navbar-brand ">
+    <img class="padLogo" src='../../assets/logo.png' alt=""> 
   </a>
   <ul class="nav pull-xs-right ">
+    
   <li class="nav-item text-muted p-0">
-    <b-btn v-b-modal.modallogin>Iniciar Sesion</b-btn>
-    <b-modal  id="modallogin" title="Ingreso">
-    <p class="my-4">Hello from modal!</p>
-    <div class="pad" slot="modal-footer" >
-         <b-btn size="sm" class="float-right" variant="primary" @click="show=false">
-           Enviar
-         </b-btn>
-       </div>
-  </b-modal>
-  </li>
-  <li class="nav-item text-muted">
-   <b-btn v-b-modal.modalregistro>Iniciar Sesion</b-btn>
-   <b-modal id="modalregistro" title="Registro">
-    <p class="my-4">Hello from modal!</p>
-  </b-modal>
+    <div class="text-center">
+        <button type="button" class="btn  listas" data-toggle="modal" data-target="#membreciaModal"  @click="cambiar('login')">
+            Ingresar
+        </button>
+        <button type="button" class="btn modallogin listas" data-toggle="modal" data-target="#membreciaModal"  @click="cambiar('membresia')">
+            Membresía
+        </button>
+    </div>
+    
+    <div class="modal fade" id="membreciaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog m-0 h-100 mh-100 w-100 position-fixed" role="document">
+            <div class="modal-content h-100 rounded-0">
+              <div class="modal-header colornav">
+                     <h3>Ingresa</h3>
+              </div>
+              <div class="modal-body">
+                  <div v-if= "login" class="nav flex-sm-column flex-row">
+                    <div v-if= "login">
+                      <div  class="col-12 col-md-12 col-xl-12">
+                        <form>
+                      <div class="form-group">
+                        <label for="correologin">Correo</label>
+                        <input v-model = "correo" type="mail" class="form-control" id="correologin" placeholder="Example@example.com"> 
+                      </div>
+                      <div class="form-group">
+                        <label for="clave">Clave</label>
+                        <input v-model = "clave" type="password" class="form-control" id="clave" placeholder="****">
+                      </div>
+                      <button class="btn btn-success text-center" type="submit" v-on:click="" style="text-align: center" >Iniciar Sesión</button>
+                      </form>
+                       <hr >
+                    </div>
+                  <div  class="col-12 md-12 col-xl-12 text-center" >
+                    <p >Aun no eres mienbro !Solicita tu membresía¡</p>
+                    <br>
+                <button class="btn btn-danger   " type="submit" @click="cambiar('membresia')" style="text-align: center" >Solicitar membresía</button>
+                  </div>
+                  </div>
+                        
+                  </div>
+                  <div v-else class="nav flex-sm-column flex-row">
+                    <div  class="col-12 col-md-12 col-xl-12">
+                      <form>
+                          <div class="form-group">
+                            <label for="correologin">Correo</label>
+                            <input v-model = "correor" type="mail" class="form-control" id="correologin" placeholder="Example@example.com"> 
+                          </div>
+                          <div class="form-group">
+                            <label for="correologin">Nombre</label>
+                            <input v-model = "nombrer" type="mail" class="form-control" id="correologin" placeholder="Nombre de usuario"> 
+                          </div>
+                          <div class="form-group">
+                            <label for="clave">Contraseña</label>
+                            <input v-model = "claver" type="password" class="form-control" id="clave" placeholder="****">
+                          </div>
+                          <div class="form-group">
+                            <label for="correologin">Confirmar contraseña</label>
+                            <input v-model = "rclaver" type="mail" class="form-control" id="correologin" placeholder="Nombre de usuario"> 
+                          </div>
+                          <div class="form-group">
+                            <input type="checkbox" id="checkbox" v-model= "aceptarr">
+                            <label for="checkbox">Aceptar terminos y condiciones</label>
+                          </div>
+                          <button class="btn btn-success " type="submit" v-on:click="" style="text-align: center" >Solicitar membresia</button>
+                        </form>
+                        </div>
+                  </div>
+              </div>
+              <div class="modal-footer colornav">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        </div>
+    </div>
+   
   </li>
   </ul>
   </nav>
@@ -62,14 +123,12 @@
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
     >
-
       <!-- Text slides with image -->
       <b-carousel-slide caption="Bienvenidos Ganadores"
                         text="Portal web creado con la ultima  tecnologia, para que ud crezca en grande"
                         img-src="https://blog.rockthetraveller.com/wp-content/uploads/2017/11/Los-estadios-de-f%C3%BAtbol-m%C3%A1s-incre%C3%ADbles-del-planeta-slider.jpg"
                         class="mh-100"  style="max-height:200px;"
       ></b-carousel-slide>
-
       <!-- Slides with custom text -->
       <b-carousel-slide img-src='https://assets.metrolatam.com/ec/2017/02/21/futbol-copa-facebook-1200x600.jpg'>
         <h3>Los Mejores Pronosticos</h3>
@@ -77,7 +136,6 @@
        <b-carousel-slide img-src='https://www.jazzdeportes.com/img/products/livedealer.jpg'>
         <h5>Experimenta la tecnologia avanzada y las mejores formulas</h5>
       </b-carousel-slide>
-
     </b-carousel>
 
   </div>
@@ -94,11 +152,8 @@
         <b-card-header class="p-0 pr-3">
         <h6  class="m-0"style="text-align:right"> bookmakers  <b-btn v-b-toggle.collapse1 variant="outline-success">Comentarios</b-btn>
          <b-btn variant="outline-success">seguir</b-btn></h6>
-
         </b-card-header>
-        
         <b-card-body align-self="center" class="p-0" style="text-align: center">
-
             <b-row >
               <b-col  cols="4">
                 <b-img rounded="circle"  width="75" height="75" src="https://sistemas.com/termino/wp-content/uploads/Usuario-Icono.jpg" alt="img" class="m-0 p-0" /> <h5>Gabriel Contreras</h5>
@@ -115,26 +170,20 @@
             <b-card>
               <b-btn v-b-toggle.collapse1_inner size="sm">Comentar</b-btn>
               <b-collapse id=collapse1_inner class="mt-2">
-                <b-form-input v-model="text1"
-                          type="text"
-                          placeholder="Escribe tu comentario"></b-form-input>
-                
+                <b-form-input 
+                  type="text"
+                  placeholder="Escribe tu comentario"></b-form-input>
               </b-collapse>
               <br>
               <b-card>Comentarios</b-card>
               <br>
-              
             </b-card>
           </b-collapse>
         </div>
-                </b-card-body>
-               
-                <b-card-footer style="text-align:right"><i class="far fa-comments" style='font-size:28px;color:white'> </i> &nbsp;&nbsp;1 de noviembre del 2018</b-card-footer>
-                
-            </b-card>
+          </b-card-body>
+          <b-card-footer style="text-align:right"><i class="far fa-comments" style='font-size:28px;color:white'> </i> &nbsp;&nbsp;1 de noviembre del 2018</b-card-footer> 
+          </b-card>
         </div>
-
-
     <div class="card text-center m-2">
         <div class="card-header text-right header">
           bookmakers
@@ -145,14 +194,11 @@
        <a href="#" class="btn btn-primary">Comentar.</a>
       </div>
           <div class="card-footer  text-left header ">
-            
              <div class="card-footer  header ">
               <a href=""><i class="far fa-comments" style='font-size:28px;color:white'> </i></a> &nbsp;&nbsp;1 days ago 
           </div> 
           </div>
-          
    </div>
-
   <div class="card text-center m-2">
         <div class="card-header text-right header">
           bookmakers
@@ -163,21 +209,16 @@
        <a href="#" class="btn btn-primary">Comentar.</a>
       </div>
           <div class="card-footer  text-left header ">
-            
              <div class="card-footer  header ">
               <a href=""><i class="far fa-comments" style='font-size:28px;color:white'> </i></a> &nbsp;&nbsp;2 days ago 
           </div> 
           </div>
-          
    </div>
-
-
         </div>
 
     <div class="col-12 col-md-3 col-xl-3 bd-sidebar fondocolor fondocolorDerecha  p-0">
 
         <b-list-group class="w-100  p-0">
-
         <b-list-group-item class="seccionDerecha p-3"><i class="fas fa-home"></i>&nbsp;&nbsp; Top Bookmakers</b-list-group-item>
         <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas"> Coolbet&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
         <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Bet365t&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
@@ -185,27 +226,13 @@
         <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Sbobet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></b-list-group-item>
         <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Coolbet&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> <i class="far fa-star"></i></b-list-group-item>
         <b-list-group-item href="#" button class="seccionDerecha1 p-3 listas">Betfair&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </b-list-group-item>
-
         </b-list-group>
-
-    
-
   </div>
-
         </div>
-    </main>
-
-        
+    </main> 
     </div>
-    
  </div> <!-- fin dic container  -->
 </section>
-
-
-
-
-
-
 <!-- ffooter  -->
   <div class="container-fluid" style="height: 200px; background: #000;" >
     <div class="container">
@@ -223,16 +250,11 @@
   </div>
   <div class="col-md-4">
    <h5 class="card-title"  style="color: #ffffff;">Nuestros apoyos</h5>
-                <p class="card-text" style="color: #ffffff;">With supporting text below as a natural lead-in to additional content.</p> 
-
-  </div>
-
-
-  
+    <p class="card-text" style="color: #ffffff;">With supporting text below as a natural lead-in to additional content.</p> 
+ </div>
+ 
 </div>
-    </div>
-
-    
+</div>
 
   </div>
 
@@ -255,6 +277,14 @@ export default {
     name:'Home',
      data () {
     return {
+      login:true,
+      correo:'',
+      clave:'',
+      correor:'',
+      nombrer:'',
+      claver:'',
+      rclaver:'',
+      aceptarr:'',
       slide: 0,
       sliding: null
     }
@@ -265,6 +295,13 @@ export default {
     },
     onSlideEnd (slide) {
       this.sliding = false
+    },
+    cambiar(login){
+     if (login==="login"){
+        this.login=true;
+     }else { 
+        this.login=false;
+     }
     }
   }
 }
@@ -300,21 +337,27 @@ button.listas:hover{
 .btn-outline-secondary{
   color: white !important;
 }
-
+.padLogo{
+  padding-left: 50px;
+}
 .modal-footer{
   padding: 0%;
+}
+.modal-header{
+  color:white !important;
+}
+.modal-body{
+  background-color: #f5f5dc !important;
+}
+.modal-footer{
+  
+  color:white !important;
 }
 .lista{
   background-color: #2a2a2e !important;
   color:white !important;
 }
 
-
-.dimensiones{
-
-    width: 100%;
-    
-}
 .todo{
 background: rgba(226,226,226,1);
 background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 31%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
@@ -324,6 +367,11 @@ background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 
 background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 31%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
 background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 31%, rgba(209,209,209,1) 57%, rgba(254,254,254,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+.modallogin{
+  background-color: #5d5d6b !important;
+  margin-right: 100px;
+  color: width;
 }
 
 .seccionDerecha{
@@ -337,7 +385,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
   color:blue !important;
   font-weight: bold!important;
 }
-
 .card-header{
   background-color:#133337 !important;
   color:white !important;
@@ -348,8 +395,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 }
 .card-body{
   background-color: #f5f5dc !important;
-  
 }
-
 </style>
 
